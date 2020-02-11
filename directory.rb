@@ -4,7 +4,7 @@
 
 
 # Students in an Array
-
+list = 0
 students = [
 {name: "Bruce Wayne", cohort: :February},
 {name: "Bruce Banner", cohort: :February},
@@ -20,6 +20,7 @@ students = [
 
 
 ]
+
 
 def input_students
 	puts "Please enter the names of the students"
@@ -45,8 +46,10 @@ def print_header
 	puts "-------------"
 end
 def print (students)
-	students.each do |student|
-		puts "#{student[:name]} (#{student[:cohort]} cohort). " 
+	students.each_with_index do |student, index|
+		# puts "#{index+=1}. #{student[:name]}"
+		puts "#{index+=1}. #{student[:name]} (#{student[:cohort]} cohort). " 
+		# changes made includes adding extra argument index and added to the puts to number the list.
 	end
 
 end
@@ -60,8 +63,6 @@ students = input_students
 print_header
 print (students)
 print_footer (students)
-
-
 
 
 
