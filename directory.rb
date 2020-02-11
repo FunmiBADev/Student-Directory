@@ -48,7 +48,8 @@ end
 def print (students)
 	students.each do |student|
 	#students.each_with_index do |student, index|
-		if student[:name].start_with? ("J")
+		if student[:name].length <12
+		# if student[:name].start_with? ("J")
 		# puts "#{index+=1}. #{student[:name]}"
 		puts "#{student[:name]} (#{student[:cohort]} cohort). " 
 		# changes made includes adding extra argument index and added to the puts to number the list.
