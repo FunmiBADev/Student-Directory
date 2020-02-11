@@ -46,21 +46,26 @@ def print_header
 	puts "-------------"
 end
 def print (students)
-	students.each do |student|
+	# students.each do |student|
 	#students.each_with_index do |student, index|
-		if student[:name].length <12
+	x = 0
+	while x < students.length
+		student = students[x]
+		x +=1
+
+		# if student[:name].length <12
 		# if student[:name].start_with? ("J")
 		# puts "#{index+=1}. #{student[:name]}"
 		puts "#{student[:name]} (#{student[:cohort]} cohort). " 
 		# changes made includes adding extra argument index and added to the puts to number the list.
 	end
-
 end
+
 
 def print_footer (students)
 	puts "Overall, we have #{students.count} great students."
 end
-end
+
 
 =begin
 	
