@@ -30,7 +30,8 @@ def input_students
 	# get the first name
 	name = gets.chomp
 	# While the name is not empty, repeat this code
-	while !name.empty? do
+	# while !name.empty? do
+	until name.empty? do
 		# add the student has to the array
 		students << {name: name, cohort: :February}
 		puts "Now we have #{students.count} students"
@@ -56,7 +57,8 @@ def print (students)
 		# if student[:name].length <12
 		# if student[:name].start_with? ("J")
 		# puts "#{index+=1}. #{student[:name]}"
-		puts "#{student[:name]} (#{student[:cohort]} cohort). " 
+		puts "#{student[:name]} (#{student[:cohort]} cohort). ".lines.map { |line| line.strip.center(75) } #center align output
+		# puts "#{student[:name]} (#{student[:cohort]} cohort). " 
 		# changes made includes adding extra argument index and added to the puts to number the list.
 	end
 end
