@@ -46,9 +46,11 @@ def print_header
 	puts "-------------"
 end
 def print (students)
-	students.each_with_index do |student, index|
+	students.each do |student|
+	#students.each_with_index do |student, index|
+		if student[:name].start_with? ("J")
 		# puts "#{index+=1}. #{student[:name]}"
-		puts "#{index+=1}. #{student[:name]} (#{student[:cohort]} cohort). " 
+		puts "#{student[:name]} (#{student[:cohort]} cohort). " 
 		# changes made includes adding extra argument index and added to the puts to number the list.
 	end
 
@@ -57,12 +59,41 @@ end
 def print_footer (students)
 	puts "Overall, we have #{students.count} great students."
 end
+end
+
+=begin
+	
+rescue Exception => e
+	
+end
+def stu_that_start_with_j (students)
+	students.each do |first|
+		if first [0] == "J"
+			puts "#{index+=1}. #{student[:name]} (#{student[:cohort]} cohort). " 
+		end
+	end
+end
+=end 
 
 # Now call the methods
 students = input_students
+# students.select {|stu| stu.start_with? "J"}
 print_header
 print (students)
+#print students.select {|stu| stu.start_with? "J"}
 print_footer (students)
 
-
+=begin
+	
+rescue Exception => e
+	
+end
+#def stu_that_start_with_j (students)
+	# students.each do |first|
+		# if first [0].upcase == "J"
+			#puts "#{index+=1}. #{student[:name]} (#{student[:cohort]} cohort). " 
+		# end
+	# end
+# end
+=end
 
